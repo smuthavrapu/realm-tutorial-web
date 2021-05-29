@@ -16,8 +16,7 @@ export default useTasks;
 
 function useAllTasksInProject(project) {
   const { data, loading, error } = useQuery(
-    gql`
-      query GetAllTasksForProject($partition: String!) {
+    gql`query GetAllTasksForProject($partition: String!) {
         tasks(query: { _partition: $partition }) {
           _id
           name
